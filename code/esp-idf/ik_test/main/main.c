@@ -444,7 +444,9 @@ void app_main()
 
     // ESP_LOGD(tag, "%.2f %.2f", C[0][0], C[0][1]);
     // ESP_LOGD(tag, "%.2f %.2f", C[1][0], C[1][1]);
-
+    gpio_pad_select_gpio(RELAY_IO);
+    gpio_set_direction(RELAY_IO, GPIO_MODE_OUTPUT);
+    gpio_set_level(RELAY_IO,1); // 1 = on, 0 = off
 
 
     xTaskCreate(task_ik, "task_ik", 1024 * 2, (void* ) 0, 10, NULL);
