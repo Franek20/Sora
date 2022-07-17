@@ -1,6 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
-
+#define RELAY_IO    27
 #include "servo.h"
 
 // SERVOS
